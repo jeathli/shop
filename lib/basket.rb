@@ -19,8 +19,6 @@ class Basket
 	end
 
 	def remove(product_id) 
-		#p = items.find {|item| item[:product].id == product_id } 
-		#items.delete(p)
 		items.delete_if{|item| item[:product].id == product_id}
 	end	
 end
