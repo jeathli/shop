@@ -14,15 +14,13 @@ products =[ {id: 1, name: "Math Book", price: 23.77, VAT: 1.23, quantity: 23},
 basket = []
 
 def remove(products, id, quantity)
-	products.each do |x|
-		if x[:id] == id	
-			if x[:quantity] >= quantity
-			x[:quantity] -= quantity 
-			else 
-			puts "Out of stock: #{x[:name]}"
-			end
-		end
-	end					
+  product = products.find{|x| x[:id] == id}
+  return unless product # by nie rzucalo bledu jak nie ma produktu
+  if x[:quantity] >= quantity
+    x[:quantity] -= quantity 
+  else 
+    puts "Out of stock: #{x[:name]}" 
+  end
 end
 
 
@@ -42,7 +40,7 @@ end
 
 
 
-def sum2(basket) 
+def suming_items_in_basket(basket) 
 	all=0
 	brutto=0
 	basket.each do |x|
@@ -57,7 +55,7 @@ def remove_items_from_basket(basket, products)
 	k = 0
 	basket.each do |x|
 		if x[:id]== id
-			k = basket.delete(x) 
+			k = basket.delete(x) 	
 		end
 	end	
 	products.each do |x|
@@ -69,7 +67,7 @@ end
 
 
 
-def sum3(products)
+def suming_products(products)
 	sum=0
 	products.each do |x|
 		sum += x[:quantity]
@@ -79,7 +77,7 @@ end
 
 def product_listning(products)
 	products.each do |x|
-		puts "name= #{x[:name]},\t quantity= #{x[:quantity]},\t price= #{x[:price]}"
+		puts "#{x[:name]},\t quantity= #{x[:quantity]},\t price= #{x[:price]}"
 	end
 end
 
@@ -87,3 +85,4 @@ end
 
 add_to_basket(products, 4, 5, basket)
 
+product_listning(products)
