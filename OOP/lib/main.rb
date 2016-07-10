@@ -46,7 +46,7 @@ class Shop
       1, 3
       add_to_basket(1,3)
     else
-      puts "Sorry there is no such a opptions :("
+      puts "Sorry there is no such opption :("
     end
   end
 
