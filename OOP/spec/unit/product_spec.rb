@@ -9,5 +9,7 @@ module Shop
         expect(subject.name).to eq("122")
       end
     end
+
+
   end
 end

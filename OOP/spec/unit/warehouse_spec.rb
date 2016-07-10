@@ -8,7 +8,7 @@ module Shop
       expect(Warehouse.new).to be_instance_of(Warehouse)
     end
 
-    describe "add products" do
+    describe "#add" do
       it "change the quantity" do
 
         warehouse = Warehouse.new
@@ -20,24 +20,24 @@ module Shop
       end
     end
 
-      describe "remove" do
-        let(:name){"foo"}
-        let(:price){10}
-        let(:id){11}
+    describe "#remove" do
+      let(:name){"foo"}
+      let(:price){10}
+      let(:id){11}
 
-        it "reduce the quantity" do
+      it "reduce the quantity" do
 
-          warehouse = Warehouse.new
-          products = Product.new(id: id, name: name, price: price)
-          expect(warehouse.products.size).to eql(0)
+        warehouse = Warehouse.new
+        products = Product.new(id: id, name: name, price: price)
+        expect(warehouse.products.size).to eql(0)
 
-          warehouse.add(id, name, price)
-          expect(warehouse.products.size).to eql(1)
+        warehouse.add(id, name, price)
+        expect(warehouse.products.size).to eql(1)
 
-          warehouse.remove(id)
+        warehouse.remove(id)
 
-          expect(warehouse.products.size).to eql(0)
-        end
+        expect(warehouse.products.size).to eql(0)
       end
+    end
   end
 end

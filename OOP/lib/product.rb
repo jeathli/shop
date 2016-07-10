@@ -13,5 +13,5 @@ module Shop
     def inspect_total_no_products
       " #{name}; price #{price} "
     end
-  end 
+  end
 end
