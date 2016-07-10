@@ -4,39 +4,39 @@ require_relative "../../lib/product"
 
 RSpec.describe Warehouse do
 
-	it "has 1 param" do
-		expect(Warehouse.new).to be_instance_of(Warehouse)
-	end
+  it "has 1 param" do
+    expect(Warehouse.new).to be_instance_of(Warehouse)
+  end
 
-	describe "add products" do
-		it "change the quantity" do
+  describe "add products" do
+    it "change the quantity" do
 
-			warehouse = Warehouse.new
-			expect(warehouse.products.size).to eql(0)
-			
-			warehouse.add(nil, nil, nil)
+      warehouse = Warehouse.new
+      expect(warehouse.products.size).to eql(0)
+      
+      warehouse.add(nil, nil, nil)
 
-			expect(warehouse.products.size).to eql(1)
-		end	
-	end
+      expect(warehouse.products.size).to eql(1)
+    end 
+  end
 
-		describe "remove" do
-			let(:name){"foo"}
-			let(:price){10}
-			let(:id){1}
+    describe "remove" do
+      let(:name){"foo"}
+      let(:price){10}
+      let(:id){1}
 
-			it "reduce the quantity" do
+      it "reduce the quantity" do
 
-				warehouse = Warehouse.new
-				products = Product.new(id: id, name: name, price: price)
-				expect(warehouse.products.size).to eql(0)
+        warehouse = Warehouse.new
+        products = Product.new(id: id, name: name, price: price)
+        expect(warehouse.products.size).to eql(0)
 
-				warehouse.add(id, name, price)
-				expect(warehouse.products.size).to eql(1)
+        warehouse.add(id, name, price)
+        expect(warehouse.products.size).to eql(1)
 
-				warehouse.remove(id)
+        warehouse.remove(id)
 
-				expect(warehouse.products.size).to eql(0)
-			end	
-		end	
+        expect(warehouse.products.size).to eql(0)
+      end 
+    end 
 end
