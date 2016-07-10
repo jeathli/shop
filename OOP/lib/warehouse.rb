@@ -17,7 +17,7 @@ class Warehouse
 	end
 
 	def remove(product_id)
-		p = products.find{|product| product.id == product_id}
+		p = products.find{|product| products(:product).id == product_id}
 		products.delete(p)
 	end
 end

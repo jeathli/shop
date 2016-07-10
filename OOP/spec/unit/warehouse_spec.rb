@@ -5,7 +5,7 @@ require_relative "../../lib/product"
 RSpec.describe Warehouse do
 
 	it "has 1 param" do
-		expect(Warehouse.new).to be_instance_of(Warehouse)	
+		expect(Warehouse.new).to be_instance_of(Warehouse)
 	end
 
 	describe "add products" do
