@@ -1,12 +1,12 @@
 module Shop
-  require_relative "./products"
+  require_relative "./product"
   require_relative "./basket"
   require_relative "./warehouse"
 
   class Shop
     def initialize
       @basket = Basket.new
-      @wearhouse = Warehouse.new(products: [
+      @wearhouse = Warehouse.new(products:  [
         Product.new(id: 1, name: "Math Book", price: 23.77, quantity: 23),
         Product.new(id: 2, name: "Red Pen", price: 4.00, quantity: 56),
         Product.new(id: 3, name: "Blue Pen", price: 4.00, quantity: 47),
@@ -43,9 +43,6 @@ module Shop
         @wearhouse.display_products
       when "2"
         exit(0)
-      when 3
-        1, 3
-        add_to_basket(1,3)
       else
         puts "Sorry there is no such opption :("
       end
@@ -57,6 +54,3 @@ module Shop
     end
   end
 end
-
-shop = Shop.new
-shop.start_shooping
