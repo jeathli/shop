@@ -1,13 +1,10 @@
 module Shop
 
-  class Products
-    attr_reader :id, :name
-    attr_accessor :price, :quantity
+  class Product
+    attr_reader :id, :name, :price, :quantity
 
-    @@id = 0
-
-    def initialize(name:, price:, quantity:)
-      @id = set_id
+    def initialize(id:, name:, price:, quantity:)
+      @id = id
       @name = name
       @price = set_price(price)
       @quantity = quantity
@@ -17,10 +14,7 @@ module Shop
       " #{name}; price #{price} "
     end
 
-    def set_id
-      @@id += 1
-    end
-
+    private
     def set_price(price)
       rais ArgumentError unless price.is_a?(Numeric)
       price

@@ -1,7 +1,4 @@
-#class Main
- ##[200, {"Content-Type" => "text/html"}, ["Good day!"]]
-  #end
-#end
-require_relative "main"
+require "bundler/setup"
+require_relative "./shop"
 
-run App.new
+run Shop::App.new
