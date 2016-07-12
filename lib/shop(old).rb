@@ -1,7 +1,5 @@
 module Shop
-  require_relative "./product"
-  require_relative "./basket"
-  require_relative "./warehouse"
+  Dir["./lib/**/*.rb"].each{|file| require file}
 
   class Shop
     def initialize

@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>SHOP</title>
+  <style>
+    h1 {
+      font-family: Verdana;
+    }
+    body {
+      background-image: url("gradient_bg.png");
+      background-color: #ccffe6;
+      font-family: "Verdana";
+    }
+    table {
+      border-collapse: 1px solid black;
+      width: 100%;
+    }
+
+    td {
+      text-align: left;
+      padding: 8px;
+      height: 50px
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      text-align: left;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>My first shop</h1>
+  <a href="/">Home</a> |
+  <a href="/basket">Basket</a>
+  <%= yield %>
+</body>
+</html>
