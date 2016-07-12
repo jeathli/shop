@@ -1,19 +1,29 @@
-class Product
-	VAT = 1.23
-	attr_reader :id, :name
-	attr_accessor :price
+module Shop
 
-	def initialize(id:, name:, price:)
-		@id = id
-		@name = name
-		@price = price
-	end
+  class Products
+    attr_reader :id, :name
+    attr_accessor :price, :quantity
 
+    @@id = 0
 
-	def inspect_total_no_products
-		" #{name}; price #{price} "
-	end
-end	
+    def initialize(name:, price:, quantity:)
+      @id = set_id
+      @name = name
+      @price = set_price(price)
+      @quantity = quantity
+    end
 
-#p1 = Product.new(id: 10, price: 232, name: "Ruller", quantity: 23)
-#p p1.inspect_total_no_products
+    def inspect_total_no_products
+      " #{name}; price #{price} "
+    end
+
+    def set_id
+      @@id += 1
+    end
+
+    def set_price(price)
+      rais ArgumentError unless price.is_a?(Numeric)
+      price
+    end
+  end
+end
