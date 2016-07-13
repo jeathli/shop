@@ -1,43 +1,23 @@
+require_relative '../../lib/services/add_item_to_warehouse'
+
 module Shop
-  Dir["./lib/**/*.rb"].each{|file| require file}
+  WAREHOUSE = []
+end
 
-  RSpec.describe Warehouse do
+  RSpec.describe Shop::AddItemToWarehouse do
+      subject(:warehouse) {Shop::AddItemToWarehouse.new}
 
-    it "an instance" do
-      expect(Warehouse.new(1, nil, nil)).to be_instance_of(Warehouse)
-    end
 
-    describe "#add" do
-      it "change the quantity" do
+    describe "#call" do
+      context "valid id" do
+        let(:quantity){ 5 }
+        let(:warehouse_first){ Shop::Warehouse.first}
 
-        Warehouse = []
-        #expect(Warehouse).to eql(0)
-        warehouse = Warehouse
-
-        warehouse.add_to_warehouse.new(id: 1, product_id: nil, quantity: nil)
-
-        expect(warehouse).to eql(1)
-      end
-    end
-
-    xdescribe "#remove" do
-      let(:name){"foo"}
-      let(:price){10}
-      let(:id){11}
-
-      it "reduce the quantity" do
-
-        warehouse = Warehouse []
-        products = Product.new(id: id, name: name, price: price)
-        expect(warehouse.products.size).to eql(0)
-
-        warehouse.add(id, name, price)
-        expect(warehouse.size).to eql(1)
-
-        warehouse.remove(id)
-
-        expect(warehouse.size).to eql(0)
+        it "raise no error" do
+          expect {
+            warehouse.call(nil).to eql(Shop::Warehouse.clear)
+          }
+        end
       end
     end
   end
-end

@@ -19,13 +19,13 @@ module Shop
       end
     end
 
-    def add(id, name, price)
-      products << { id: id, name: name, price: price }
-    end
+    #def add(id, name, price)
+     # products << { id: id, name: name, price: price }
+    #end
 
-    def remove(product_id)
-      products.delete_if{|products| products[:id] == product_id}
-    end
+    #def remove(product_id)
+    #  products.delete_if{|products| products[:id] == product_id}
+   # end
 
     private
     def set_id
