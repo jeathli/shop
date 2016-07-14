@@ -9,11 +9,5 @@ module Shop
         expect(subject.name).to eq("122")
       end
     end
-
-      xit "set_price" do
-        expect {
-          (price.lenght) > 2
-        }.to_not raise_error
-      end
   end
 end

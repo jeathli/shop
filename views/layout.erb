@@ -1,40 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>SHOP</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Ib5WUYOh/fqe9wT9MDBX+VgUWQuUf8oDH3yuR9Kr+6Y5ejq92KR8LEuCbRiGZpG" crossorigin="anonymous">
   <style>
-    h1 {
-      font-family: Verdana;
-    }
-    body {
-      background-image: url("gradient_bg.png");
-      background-color: #ccffe6;
-      font-family: "Verdana";
-    }
-    table {
-      border-collapse: 1px solid black;
-      width: 100%;
-    }
 
-    td {
-      text-align: left;
-      padding: 8px;
-      height: 50px
-    }
-
-    tr:nth-child(even){background-color: #f2f2f2}
-
-    th {
-      background-color: #4CAF50;
-      color: white;
-      text-align: left;
-      height: 50px;
-    }
   </style>
 </head>
-<body>
-  <h1>My first shop</h1>
-  <a href="/">Home</a> |
-  <a href="/basket">Basket</a>
+<body class="container-fluid">
+  <h1> WOZANE shop</h1>
+  <div style="background-image: ../public/Image/logo.jpg;height:imageheight 45px;width:imagewidth 50px">
+    <a class="btn btn-default" href="/">Home</a>
+    <a class="btn btn-warning" href="/basket">Basket</a>
+  </div>
   <%= yield %>
 </body>
 </html>
