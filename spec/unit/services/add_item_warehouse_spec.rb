@@ -5,7 +5,7 @@ module Shop
 end
 
   RSpec.describe Shop::AddItemToWarehouse do
-      subject(:warehouse) {Shop::AddItemToWarehouse.new}
+      subject(:warehouse) { Shop::AddItemToWarehouse.new }
 
     before do
       Shop::WAREHOUSE.clear
@@ -27,7 +27,7 @@ end
       it "change the quantity" do
         expect {
           warehouse.call(1, 1)
-        }.to change{Shop::WAREHOUSE.count}.from(0).to(1)
+        }.to change{ Shop::WAREHOUSE.count }.from(0).to(1)
 
       end
   end
