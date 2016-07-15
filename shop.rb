@@ -17,6 +17,7 @@ module Shop
     Product.new(id: 9, name: "Set of color pencils", price: 18.99, quantity: 51)
   ]
   WAREHOUSE = []
+
   BASKET = []
 
   class App < Sinatra::Base
@@ -36,8 +37,8 @@ module Shop
     end
 
     post "/basket" do
-      AddItemToBasket.new(params).call
-      redirect "/"
+        AddItemToBasket.new(params).call
+        redirect "/"
     end
   end
 end
