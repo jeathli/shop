@@ -5,7 +5,8 @@ module Shop
 end
 
 RSpec.describe Shop::AddItemToBasket do
-  subject(:basket) { Shop::AddItemToBasket.new }
+  let(:params){ {"product_id" => 1, "quantity" => 1}}
+  subject(:basket) { Shop::AddItemToBasket.new(params) }
 
   before do
     Shop::BASKET.clear
@@ -14,7 +15,7 @@ RSpec.describe Shop::AddItemToBasket do
   describe "#add" do
     it "change quantity" do
       expect {
-        basket.call(1, 4)
+        basket.call
       }.to change{ Shop::BASKET.count}.from(0).to(1)
     end
   end

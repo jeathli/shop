@@ -26,9 +26,8 @@ end
 
       it "change the quantity" do
         expect {
-          warehouse.call(1, 1)
-        }.to change{ Shop::WAREHOUSE.count }.from(0).to(1)
-
+          warehouse.call(nil, :quantity)
+        }.to change{Shop::WAREHOUSE.count}.from(0).to(1)
       end
   end
 
