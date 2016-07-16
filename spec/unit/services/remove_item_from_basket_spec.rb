@@ -22,7 +22,7 @@ RSpec.describe Shop::RemoveItemFromBasket do
       let!(:AddItemToBasket) { Shop::BASKET << Shop::Item.new(product_id: 1, quantity: quantity) }
 
       it "remove item" do
-        Shop::BASKET
+        Shop::BASKET.Ad
 
         expect {
           basket.call(quantity)

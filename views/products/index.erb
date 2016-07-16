@@ -3,11 +3,11 @@
 <ul class="list-group">
   <li class="list-group-item">
     <span class="badge">14</span>
-     <% products.each do |product| %>
-  <ls class="list-group-item">
-    <a class="text-muted" href="/products/<%= product.id %>">
-      <%= product.name %>
-    </a>
-  </ls>
-<% end %>
+    <% products.each do |product| %>
+    <ls class="list-group-item">
+      <a class="text-muted" href="/products/<%= product.id %>">
+        <%= product.name %>
+      </a>
+    </ls>
+    <% end %>
 </ul>
