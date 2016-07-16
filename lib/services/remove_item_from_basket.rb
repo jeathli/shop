@@ -1,5 +1,5 @@
 module Shop
-  class RemoveFromWarehouse
+  class RemoveItemFromBasket
     attr_reader :product_id, :quantity
 
     def initialize(params)
@@ -7,8 +7,8 @@ module Shop
       @quantity = params.fetch("quantity").to_i
     end
 
-    def call(id)
-      Warehouse.delete_if { |product| product(id) == id  }
+    def call(product_id)
+      BASKET.delete_if { |product_id| (product_id).product_id == product_id }
     end
   end
 end
