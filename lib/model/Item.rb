@@ -1,6 +1,6 @@
 module Shop
   class Item
-    attr_reader :id, :product_id
+    attr_reader :product_id
     attr_accessor :quantity
 
     @@id = 0
